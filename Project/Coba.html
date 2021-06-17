@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <title>ART</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="Style/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- Top Background Image Wrapper -->
+    <div class="bgded overlay padtop" style="background-image:url('Image/Pain.jpg');"> 
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+      <header id="header" class="hoc clear">
+        <div id="logo" class="fl_left"> 
+          <!-- ################################################################################################ -->
+          <h1><a href="index.html">l'art</article></a></h1>
+          <!-- ################################################################################################ -->
+        </div>
+        <nav id="mainav" class="fl_right"> 
+            <!-- ################################################################################################ -->
+            <ul class="clear">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a class="drop" href="#">Pages</a>
+                  <ul>
+                    <li><a href="gallery.php">Gallery</a></li>
+                  </ul>
+                </li>
+                <li><a href="LOGIN BASDAT.html">Log Out <i class="fas fa-sign-out-alt"></i></a></li>
+              </ul>
+            <!-- ################################################################################################ -->
+          </nav>
+      </header>
+        <div id="pageintro" class="hoc clear"> 
+            <!-- ################################################################################################ -->
+            <section class="hoc container clear"> 
+                <!-- ################################################################################################ -->
+                <div class="sectiontitle">
+
+                  <h6 class="heading">Gallery</h6>
+                </div>
+                <article id="points" class="group">
+                  <div class="two_third first">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Item name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Photo</th>
+                    
+                            </tr>
+                        </thead>
+                        <tbody>
+                    
+                            <?php
+                            $query = pg_query("SELECT * FROM item");
+                            while($barang = pg_fetch_array($query)){
+                                echo "<tr>";
+                    
+                                echo "<td>".$barang['itemid']."</td>";
+                                echo "<td>".$barang['item_name']."</td>";
+                                echo "<td>".$barang['category']."</td>";
+                                echo "<td>".$barang['price']."</td>";
+                                echo "<td>".$barang['photo']."</td>";
+                    
+                                echo "<td>";
+                                echo "<a href='hapus.php?id=".$barang['itemid']."'>Delete</a>";
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                            
+                    
+                    
+                            ?>
+                    
+                        </tbody>
+                        </table>
+                    
+                        <p>Total: <?php echo pg_num_rows($query) ?></p>
+                  </div>
+                  <div class="one_third last"><a class="imgover" href="#"><img src="images/demo/348x394.png" alt=""></a></div>
+                </article>
+                <!-- ################################################################################################ -->
+              </section>
+            <!-- ################################################################################################ -->
+        </div>
+          <!-- ################################################################################################ -->
+    </div>
+
+    
+
+</body>
+</html>

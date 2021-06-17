@@ -1,0 +1,98 @@
+<?php include("config.php"); ?>
+
+<!DOCTYPE html>
+<head>
+    <title>ART</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="Style/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- Top Background Image Wrapper -->
+    <div class="bgded overlay padtop" style="background-image:url('Image/Pain.jpg');"> 
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+      <header id="header" class="hoc clear">
+        <div id="logo" class="fl_left"> 
+          <!-- ################################################################################################ -->
+          <h1><a href="main.html">l'art</article></a></h1>
+          <!-- ################################################################################################ -->
+        </div>
+        <nav id="mainav" class="fl_right"> 
+            <!-- ################################################################################################ -->
+            <ul class="clear">
+              <li class="active"><a href="main.html">Home</a></li>
+              <li><a class="drop" href="#">Pages</a>
+                <ul>
+                  <li><a href="gallery.php">Gallery</a></li>
+                </ul>
+              </li>
+              <li><a href="LOGIN BASDAT.html">Log Out <i class="fas fa-sign-out-alt"></i></a></li>
+            </ul>
+            <!-- ################################################################################################ -->
+          </nav>
+      </header>
+        <div id="pageintro" class="hoc clear"> 
+            <!-- ################################################################################################ -->
+            <article>
+              <h3 class="heading">Expand Your Gallery</h3>
+              <footer>
+                <ul class="nospace inline pushright">
+                  <li><a class="btn pop" onclick="openForm()" href="#">Add Product</a></li>
+                </ul>
+              </footer>
+            </article>
+
+            <div class="form-popup" id="myForm">
+                <form action="tombolupload.php" method="POST" class="form-container">
+                  <h1>Describe your product</h1>
+              
+                  <label for="ItemName"><b>Name</b></label>
+                  <input type="text" class="inputext" placeholder="What's your work called" name="ItemName" required>
+
+                  <p>What's the category:</p>
+                    <input type="radio" id="Drawing" name="Categories" value="Drawing">
+                    <label for="Categories" class="labrad">Drawing</label><br>
+                    <input type="radio" id="Painting" name="Categories" value="Painting">
+                    <label for="Categories" class="labrad">Painting</label><br>
+                    <input type="radio" id="Other" name="Categories" value="Other">
+                    <label for="Categories" class="labrad">Other</label>
+              
+                  <label for="Price"><b>Price</b></label>
+                  <input type="text" class="inputext" placeholder="What's the worth ($)" name="Price" required>
+
+                  <label for ="ArtPhoto"><b>Photo</b></label>
+                  <input type ="file" id="ArtPhoto" name="ArtPhoto">
+
+                  
+              
+                  <button type="submit" class="btn" name="signup">Post</button>
+                  <button type="submit" class="btn" name="cancel" onclick="closeForm()">Cancel</button>
+                </form>
+            </div>
+
+            <!-- ################################################################################################ -->
+        </div>
+          <!-- ################################################################################################ -->
+    </div>
+
+   
+       
+       
+            <thead>
+              
+            </thead>
+            <tbody>
+        
+            </tbody>
+            </table>
+        
+        </main>
+      </div>
+ <script src="Script/Form.js"></script>
+</body>
+</html>
